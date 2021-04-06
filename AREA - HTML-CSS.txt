@@ -1,0 +1,110 @@
+AREA - HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Aprendiendo CSS con @soydalto </title>    
+  <link rel="stylesheet" type="text/css" href="../estilo.css">
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
+</head>
+    <div class="grid-container">
+    
+        <div class="grid-item grid-header">
+          <ul>
+           <li><a href="#">Enlace</a></li>
+           <li><a href="#">Enlace</a></li>
+           <li><a href="#">Enlace</a></li>
+           <li><a href="#">Enlace</a></li>
+
+          </ul>
+
+        </div>
+        <div class="grid-item grid-main"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           Asperiores cupiditate ex ratione nesciunt vitae autem error.
+            Numquam voluptatem aspernatur atque sapiente aut. 
+            Iure mollitia ex doloremque natus in animi sit!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           Asperiores cupiditate ex ratione nesciunt vitae autem error.
+            Numquam voluptatem aspernatur atque sapiente aut. 
+            Iure mollitia ex doloremque natus in animi sit!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           Asperiores cupiditate ex ratione nesciunt vitae autem error.
+            Numquam voluptatem aspernatur atque sapiente aut. 
+            Iure mollitia ex doloremque natus in animi sit!
+            
+          </div>
+        <div class="grid-item grid-aside">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Unde quaerat vero voluptate odio corporis! Autem illum, inventore
+           et laborum sint libero fugiat nemo pariatur neque veritatis,
+            incidunt atque ut corrupti
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+           Asperiores cupiditate ex ratione nesciunt vitae autem error.
+            
+            </div>
+        <div class="grid-item grid-foote">Footer</div>
+
+
+
+
+    </div>
+     
+</body>           
+</html>
+        
+-------------------------------------------------------------------------
+CSS
+-------------------------------------------------------------------------
+* {
+    font-family: 'Caveat', sans-serif;
+    font-weight: 100;
+}
+
+body {
+    background: radial-gradient(circle,#fff,#bbb);
+
+}
+.grid-container {
+    background: #444;
+    margin: 10px;
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "aside main main"
+    "aside main main"
+    "aside main main"
+    "aside main main"
+    "footer footer footer";
+    grid-template-rows: repeat(auto-fill, 1fr);
+    height: 92vh;
+    border: 5px solid #000;
+}
+ul li {
+    display: inline-block;
+}
+.grid-item {
+    
+}
+
+.grid-footer {
+    background-color: #6f9;
+    grid-area: footer;
+}
+
+.grid-header {
+    background-color: #f96;
+    grid-area: header;
+
+}
+
+.grid-main {
+    background-color: #96f;
+    grid-area: main;
+}
+
+.grid-aside {
+background-color: #888;
+grid-area: aside;
+}

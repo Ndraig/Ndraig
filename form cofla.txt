@@ -1,0 +1,131 @@
+HTML 
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+
+    <form>
+        <h2>INSCRIPCION DE MATERIAS ADEUDADAS</h2>
+        <input type="text" placeholder="Nombre Completo" id="nombre" required="">
+        <input type="email" placeholder="Mail" id="mail" required="">
+        <input type="text" placeholder="Materia Adeudada" id="materia" required="">
+        <input type="submit" value="Solicitar Mesa" id="btn-enviar">
+        <div class="resultado"></div>
+    </form>
+
+  
+<script src="codigo.js"></script>
+</body>
+</html>
+-------------------------------
+js
+const nombre = document.getElementById("nombre");
+const email = document.getElementById("email");
+const materia = document.getElementById("materia");
+const boton = document.getElementById("btn-enviar");
+const resultado = document.querySelector(".resultado");
+
+
+
+boton.addEventListener("click",(e)=>{
+        let error = validarCampos();
+    if (error[0]) {
+        resultado.innerHTML = error[1];
+        resultado.classList.add("red");
+    } else {
+        resultado.innerHTML = "Solicitud enviada correctamente";
+        resultado.classList.add("green");
+        resultado.classList.remove("red"); 
+    }
+})
+
+const validarCampos = ()=>{
+    let error = [];
+    if (nombre.value.lenght < 5 || nombre.value.length > 40) {
+        error[0] = true;
+        error[1] = "El nombre es invalido"  
+        return error;
+           
+    } else if (email.value.lenght < 5 || 
+               email.value.lenght > 40 ||
+               email.value.indexOf("@") == -1 ||
+               email.value.indexOf(".") == -1 ){  
+            error[0] = true;
+            error[1] = "El mail es invalido";
+            return error;
+    }   else if (materia.value < 4 || materia.value > 40 ) {
+        error[0] = true;
+        error[1] = "La materia no existe";
+    }        
+
+    error[0] = false;
+    return error;
+}
+------------
+css
+body {
+    color: #333;
+    font-family: sans-serif;
+    background: #000;
+}
+input {
+    display: block;
+    padding: 9px;
+    margin: 12px 2%;
+    box-sizing: border-box;
+    border: none;
+    border-top: 2px solid #48e;
+    background: transparent;
+    outline: none |important;
+    transition: background 0.3s;
+    width: 100%;
+    color: #fff;
+}
+
+input::placeholder {
+    color: #48e;
+    transition: color 0.3s;
+}
+input:hover {
+    background: #26a;
+}
+input:hover::placeholder{
+    color: #fff;
+}
+
+input[type="submit"]{
+    width: 50%;
+    padding: 12px;
+    background: #26a;
+    color: #fff;
+    margin: 24px 0;
+    margin-bottom: 12px;
+}
+input[type="submit"]:hover {
+    background: #048;
+}
+
+form {
+    width: 60%;
+    margin: auto;
+    background: #013;
+    padding: 30px;
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 36px;
+}
+
+.green {
+    color: #9c9;
+}
+
+.red {
+    color: #c99;
+}

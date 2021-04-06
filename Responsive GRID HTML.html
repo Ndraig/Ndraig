@@ -1,0 +1,96 @@
+Responsive GRID HTML
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Aprendiendo CSS con @soydalto </title>    
+  <link rel="stylesheet" type="text/css" href="../estilo.css">
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
+</head>
+      <div class="content">
+              <header class="header">Header</header>
+              <article class="main">Main</article>
+              <aside class="aside">Aside</aside>
+              <footer class="footer">Footer</footer>
+
+      </div>
+
+       
+</body>           
+</html>
+    
+
+-------------------------------------------------------------
+CSS----------------------------------------------------------
+-------------------------------------------------------------
+
+* {
+    font-family: 'Caveat', sans-serif;
+    font-weight: 100;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+.header, .main, .aside, .footer {
+    padding: 20px;
+}
+
+.header {
+    background: lightblue;
+    flex-basis: 60px;
+
+}
+
+.main {
+    background: slateblue;
+    flex-basis: 300px;
+    flex-grow: 2;
+    flex-shrink: 0;
+}
+
+.aside {
+    background:darkslateblue;
+    flex-basis: 200px;
+    flex-grow: 1;
+    flex-shrink: 0;
+
+}
+.footer {
+    background: violet;
+    flex-grow: 1;
+
+}
+
+
+@media screen and (min-width: 900px) {
+    .content {
+     display: grid;
+     grid-template-rows: 80px 1fr 1fr 1fr 1fr 80px;
+     grid-template-columns: repeat(3,1fr);
+    }
+       
+    .header {
+            grid-column: 1 / span 3;
+    }
+
+    .main {
+      grid-row: 2 / 6;
+      grid-column: 1 / span 2;
+    }
+    .aside {
+        grid-row: 2 / 6;
+      
+    }
+   .footer {
+       grid-row: 6 / 7;
+       grid-column: 1 / span 3;       
+   }
+}

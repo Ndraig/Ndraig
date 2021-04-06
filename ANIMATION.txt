@@ -1,0 +1,69 @@
+ANIMATION
+HTML-----
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Aprendiendo CSS con @soydalto </title>    
+  <link rel="stylesheet" type="text/css" href="../estilo.css">
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
+</head>
+      <div class="container">
+          <div class="caja"></div>
+          
+          
+
+      </div>
+
+     
+
+       
+</body>           
+</html>
+        
+----------------------------------------------------------------------
+CSS--------------------------------------------------------------------
+---------------------------------------------------------------------
+
+* {
+    font-family: 'Caveat', sans-serif;
+    font-weight: 100;
+}
+
+.container {
+    
+    background: #86f;
+    padding: 20px 5px;
+
+}
+.caja {
+    background: #025;
+    height: 80px;
+    width: 80px;
+    margin: 20px;
+    animation: desplazarse;
+    animation-duration: 1s;
+    position: relative;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes desplazarse {
+    0% {
+        position: relative;
+        left: 0;
+        background: #025
+    }
+
+    50% {
+        background: red;
+
+    }
+    100% {
+        left: 80%;
+        background: green;
+    }
+}

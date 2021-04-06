@@ -1,0 +1,147 @@
+HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Aprendiendo CSS con @soydalto </title>    
+  <link rel="stylesheet" type="text/css" href="../estilo.css">
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/62ea397d3a.js" crossorigin="anonymous"></script>
+</head>
+<body>  
+ <header>
+  <nav class="nav">
+  <ul class="nav_ul">
+
+  <li class="nav_li"><i class="fas fa-home"></i><a href="#">Inicio</a></li>
+  <li class="nav_li"><i class="fas fa-user-friends"></i><a class href="#">Sobre nosotros</a></li>
+  <li class="nav_li"><i class="fas fa-dollar-sign"></i><a class href="#">Gana dinero</a></li>
+  <li class="nav_li"><i class="fas fa-question-circle"></i><a class href="#">Ayuda</a></li>
+  </ul>
+  <ul class="nav_responsive-ul">
+  <div class="nav_responsive-button-container">
+    <div class="nav_responsive-button fas fa-bars"></div>
+  
+  <div class="nav_li-container">
+  <li class="nav_responsive-li fas fa-home"><a href="#">Inicio</a></li>
+  <li class="nav_responsive-li fas fa-user-friends"><a href="#">Sobre nosotros</a></li>
+  <li class="nav_responsive-li fas fa-dollar-sign"><a href="#">Gana dinero</a></li>
+  <li class="nav_responsive-li fas fa-question-circle"><a href="#">Ayuda</a></li>
+ </div>    
+                    
+  </ul>
+  </nav>
+  </header>
+  </bod>           
+  </html>
+        
+
+CSS
+
+* {
+    font-family: 'Caveat', sans-serif;
+    font-weight: 100;
+}
+.nav_responsive-ul {
+    display: none;
+    background-color: #69c;
+} 
+nav {
+    background-color: #69c; 
+}
+.nav_li {
+    display: inline-block;
+    padding: 12px; 
+    color: #fff;
+}
+.nav_li:hover > a {
+    color: #bbb; 
+}
+.nav_li:hover {
+    color: #bbb;
+}
+.nav_li a {
+    color: #fff;
+    text-decoration: none;
+}
+.nav_li i {
+    width: 30px;
+    box-sizing: border-box;
+    text-align: right;
+    margin-right: 5px;
+}
+
+.nav_responsive-button-container {
+    position: absolute;
+    width: 100%;
+    background-color: #69c;
+    margin-top: -64px;
+    z-index: 100;
+    
+}
+
+.nav_responsive-button {
+    padding: 6px 20px;
+    text-align: right;
+    width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    .nav_ul{
+        display: none;
+    }
+    
+.nav {
+    height: 37px;
+    width: 100%;
+}
+.nav_li-container {
+    position: relative;
+    top: -1000px ;
+    height: calc(100vh - 64px);
+    background: #9bf;
+    transition: all 1s;
+    z-index: 1;
+    width: 75%;
+    padding-top: 27px;
+
+}
+.nav_responsive-ul {
+    display: block;
+    position: absolute;
+    background: #9bf;
+    height: 100%;
+    margin-top: 37px; 
+    padding-top: 27px;
+    
+}
+
+
+.nav_responsive-li {
+    width: 100%;
+    padding: 9px 20px;
+
+
+}
+
+.nav_responsive-li i {
+    box-sizing: border-box;
+    text-align: center;
+    margin-right: 5px;
+    width: 30px;
+    color: #016;
+
+}
+
+.nav_responsive-li a {
+    color #016;
+    text-decoration: none;
+}
+
+.nav_responsive_ul:hover > .nav_li-container {
+    top: -27px;
+
+
+}
